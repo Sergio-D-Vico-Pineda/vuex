@@ -1,18 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+   <div class="flex gap-5 flex-wrap justify-center mt-10">
+      <template v-for="card in $store.state.cards">
+         <Card :title="card.title" :desc="card.desc" :img="card.img" />
+      </template>
+   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Card from '@/components/Card.vue';
+import { useStore } from 'vuex';
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+   name: 'HomeView',
+   components: {
+      Card
+   },
+   setup() {
+      const store = useStore();
+      return {
+         ...store.state
+      }
+   }
 }
 </script>
+
+<style scoped>
+* {
+   color: #f3f4f6;
+}
+</style>
