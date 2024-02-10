@@ -1,18 +1,9 @@
 <template>
-   <nav class="bg-[#111516] py-4 md:text-xl">
-      <div class=" flex items-center gap-x-14 px-10">
-         <router-link to="/">
-            <img src="./assets/logo.png" width="30" height="30" alt="Inicio">
-         </router-link>
-         <ul class="justify-center items-center flex space-x-6 space-y-0">
-            <li class="text-gray-700 hover:text-gray-900">
-               <router-link to="/">Home</router-link>
-            </li>
-            <li class="text-gray-700 hover:text-gray-900">
-               <router-link to="/about">About</router-link>
-            </li>
-         </ul>
-      </div>
+   <nav class="bg-[#111516] py-4 md:text-xl px-10">
+      <router-link class="flex items-center gap-x-3" to="/">
+         <img src="./assets/logo.png" width="30" height="30" alt="Inicio">
+         Inicio
+      </router-link>
    </nav>
    <hr />
    <router-view />
